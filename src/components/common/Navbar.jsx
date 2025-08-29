@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const menus = {
     about: [
@@ -38,21 +39,21 @@ const Navbar = () => {
   return (
     <nav className="w-full font-sans relative">
       {/* Top black bar */}
-      <div className="bg-black text-white flex justify-between px-8 py-2 text-sm">
-        <div className="flex gap-6">
+      <div className="bg-black text-white flex justify-between px-4 md:px-8 py-2 text-sm">
+        <div className="flex gap-4 md:gap-6">
           <span>⚝ Partnership</span>
           <span>📞 Help Center</span>
         </div>
-        <div className="flex gap-6">
+        <div className="flex gap-4 md:gap-6">
           <span>💬 Live chat</span>
           <span>🇬🇧 English ▾</span>
         </div>
       </div>
 
-      {/* Navbar with dynamic bg */}
+      {/* Navbar */}
       <div
-        className={`text-white px-8 py-3 flex items-center justify-between relative transition-colors duration-300 ${
-          openMenu ? "bg-[#c33c44]" : "bg-[#0d223d]"
+        className={`text-white px-4 md:px-8 py-3 flex items-center justify-between relative transition-colors duration-300 ${
+          openMenu || mobileOpen ? "bg-[#c33c44]" : "bg-[#0d223d]"
         }`}
       >
         {/* Logo */}
@@ -61,8 +62,8 @@ const Navbar = () => {
           <div className="text-xs font-normal -mt-1">Capital Markets</div>
         </div>
 
-        {/* Nav links */}
-        <div className="flex items-center gap-8 text-sm font-medium relative">
+        {/* Desktop Nav Links */}
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium relative">
           {[
             { label: "About Us", key: "about" },
             { label: "Trading", key: "trading" },
@@ -88,13 +89,12 @@ const Navbar = () => {
             </div>
           ))}
 
-          {/* Simple Links */}
           <button className="hover:opacity-80">Promotions</button>
           <button className="hover:opacity-80">Blog</button>
         </div>
 
-        {/* Right buttons */}
-        <div className="flex items-center gap-4">
+        {/* Desktop Right buttons */}
+        <div className="hidden md:flex items-center gap-4">
           <button className="border border-white px-4 py-2 rounded hover:bg-white hover:text-[#c33c44] transition">
             Login
           </button>
@@ -102,18 +102,26 @@ const Navbar = () => {
             Open An Account
           </button>
         </div>
+
+        {/* Mobile Hamburger */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden text-white"
+        >
+          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
 
-      {/* Animated full-width dropdown */}
+      {/* Desktop Dropdowns */}
       <AnimatePresence>
-        {openMenu && (
+        {openMenu && !mobileOpen && (
           <motion.div
             key={openMenu}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="absolute left-0 w-full bg-[#c33c44] text-white shadow-lg overflow-hidden"
+            className="absolute left-0 w-full bg-[#c33c44] text-white shadow-lg overflow-hidden hidden md:block"
           >
             <div className="max-w-6xl mx-auto p-8 grid grid-cols-3 gap-10">
               {menus[openMenu].map((menu, i) => (
@@ -122,6 +130,75 @@ const Navbar = () => {
                   <p className="text-sm">{menu.desc}</p>
                 </div>
               ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "100vh", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-[#c33c44] text-white p-6 flex flex-col gap-4 absolute top-full left-0 w-full"
+          >
+            {[
+              { label: "About Us", key: "about" },
+              { label: "Trading", key: "trading" },
+              { label: "Tools", key: "tools" },
+            ].map((item) => (
+              <div key={item.key}>
+                <button
+                  onClick={() => toggleMenu(item.key)}
+                  className="flex items-center justify-between w-full py-2 border-b border-white/30"
+                >
+                  {item.label}
+                  <motion.div
+                    animate={{ rotate: openMenu === item.key ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ChevronDown size={18} />
+                  </motion.div>
+                </button>
+
+                {/* Collapsible submenus */}
+                <AnimatePresence>
+                  {openMenu === item.key && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="pl-4 flex flex-col gap-2 py-2"
+                    >
+                      {menus[item.key].map((menu, i) => (
+                        <p key={i} className="text-sm">
+                          {menu.title}
+                        </p>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+
+            <button className="text-left py-2 border-b border-white/30">
+              Promotions
+            </button>
+            <button className="text-left py-2 border-b border-white/30">
+              Blog
+            </button>
+
+            <div className="mt-6">
+              <button className="w-full border border-white px-4 py-2 rounded mb-3">
+                Login
+              </button>
+              <button className="w-full bg-[#e74c3c] px-4 py-2 rounded">
+                Open An Account
+              </button>
             </div>
           </motion.div>
         )}
