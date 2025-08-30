@@ -1,164 +1,209 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
-import logo from "../../assets/innovix.jpeg";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, Menu, X } from "lucide-react";
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(null);
+  const [openMenu, setOpenMenu] = useState(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const toggleDropdown = (menu) =>
-    setDropdownOpen(dropdownOpen === menu ? null : menu);
+  const menus = {
+    about: [
+      { title: "About Us", desc: "Learn more about us" },
+      {
+        title: "Regulations and Licences",
+        desc: "Fair and transparent trading",
+      },
+      { title: "Contact Us", desc: "Get in touch with us" },
+      { title: "Press Room", desc: "Coverage in the media" },
+      { title: "Awards & News", desc: "Awards and company news" },
+      {
+        title: "Deposits and Withdrawals",
+        desc: "Fast, hassle-free transactions",
+      },
+    ],
+    trading: [
+      { title: "Trading Accounts", desc: "Choose your account type" },
+      { title: "Spreads & Conditions", desc: "Competitive pricing" },
+      { title: "Platforms", desc: "MT4, MT5 & more" },
+    ],
+    tools: [
+      { title: "Calculators", desc: "Calculate important forex data" },
+      { title: "Economic Calendar", desc: "Latest event information" },
+    ],
+  };
 
-  const menuItems = [
-    {
-      name: "About Us",
-      dropdown: [
-        { title: "About Us", link: "/about-us" },
-        { title: "Regulations & Licences", link: "/regulations" },
-        { title: "Contact Us", link: "/contact" },
-        { title: "Press Room", link: "/press-room" },
-        { title: "Awards & News", link: "/awards" },
-        { title: "Deposits & Withdrawals", link: "/deposits" },
-      ],
-    },
-    {
-      name: "Trading",
-      dropdown: [
-        { title: "Accounts Overview", link: "/accounts" },
-        { title: "Platforms", link: "/platforms" },
-        { title: "Leverage & Margin", link: "/leverage" },
-      ],
-    },
-    {
-      name: "Tools",
-      dropdown: [
-        { title: "Trading Tools", link: "/tools" },
-        { title: "Calculators", link: "/calculators" },
-        { title: "Signals", link: "/signals" },
-      ],
-    },
-    { name: "Promotions", link: "/promotions" },
-    { name: "Blog", link: "/blog" },
-  ];
+  const toggleMenu = (key) => {
+    setOpenMenu(openMenu === key ? null : key);
+  };
 
   return (
-    <header className="w-full">
-      {/* Top Bar */}
-      <div className="bg-black text-white text-sm flex justify-between items-center px-4 md:px-10 py-2">
-        <div className="flex gap-6">
-          <span className="flex items-center gap-1">🌐 Partnership</span>
-          <span className="flex items-center gap-1">📞 Help Center</span>
+    <nav className="w-full font-sans relative">
+      {/* Top black bar */}
+      <div className="bg-black text-white flex justify-between px-4 md:px-8 py-2 text-sm">
+        <div className="flex gap-4 md:gap-6">
+          <span>⚝ Partnership</span>
+          <span>📞 Help Center</span>
         </div>
-        <div className="flex gap-6">
-          <span className="flex items-center gap-1">💬 Live chat</span>
-          <span className="flex items-center gap-1">
-            🇬🇧 English <FaChevronDown size={12} />
-          </span>
+        <div className="flex gap-4 md:gap-6">
+          <span>💬 Live chat</span>
+          <span>🇬🇧 English ▾</span>
         </div>
       </div>
 
-      {/* Main Navbar */}
-      <nav className="bg-[#1f3044] text-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-10 flex justify-between items-center py-4">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img src={logo} alt="Logo" className="h-8 md:h-10" />
-          </Link>
+      {/* Navbar */}
+      <div
+        className={`text-white px-4 md:px-8 py-3 flex items-center justify-between relative transition-colors duration-300 ${
+          openMenu || mobileOpen ? "bg-[#c33c44]" : "bg-[#0d223d]"
+        }`}
+      >
+        {/* Logo */}
+        <div className="text-2xl font-bold tracking-wider">
+          HY<span className="text-white">CM</span>
+          <div className="text-xs font-normal -mt-1">Capital Markets</div>
+        </div>
 
-          {/* Desktop Menu */}
-          <ul className="hidden md:flex items-center gap-8 font-medium">
-            {menuItems.map((item) =>
-              item.dropdown ? (
-                <li
-                  key={item.name}
-                  className="relative group cursor-pointer"
-                  onMouseEnter={() => setDropdownOpen(item.name)}
-                  onMouseLeave={() => setDropdownOpen(null)}
+        {/* Desktop Nav Links */}
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium relative">
+          {[
+            { label: "About Us", key: "about" },
+            { label: "Trading", key: "trading" },
+            { label: "Tools", key: "tools" },
+          ].map((item) => (
+            <div key={item.key} className="relative">
+              <button
+                onClick={() => toggleMenu(item.key)}
+                className="flex items-center gap-1 hover:opacity-80 relative pb-1"
+              >
+                {item.label}
+                <motion.div
+                  animate={{ rotate: openMenu === item.key ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  <span>
-                    {item.name}{" "}
-                    <FaChevronDown className="inline ml-1" size={12} />
-                  </span>
-                  {dropdownOpen === item.name && (
-                    <div className="absolute bg-white text-black shadow-md mt-2 rounded w-56 z-50">
-                      <ul className="flex flex-col">
-                        {item.dropdown.map((sub, idx) => (
-                          <li key={idx} className="px-4 py-2 hover:bg-gray-100">
-                            <Link to={sub.link}>{sub.title}</Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </li>
-              ) : (
-                <li key={item.name} className="cursor-pointer">
-                  <Link to={item.link}>{item.name}</Link>
-                </li>
-              )
-            )}
-          </ul>
+                  <ChevronDown size={16} />
+                </motion.div>
 
-          {/* Desktop Buttons */}
-          <div className="hidden md:flex gap-3">
-            <button className="px-5 py-2 border border-white rounded hover:bg-white hover:text-[#1f3044] transition">
-              Login
-            </button>
-            <button className="px-5 py-2 bg-red-500 rounded hover:bg-red-600 transition">
-              Open An Account
-            </button>
-          </div>
+                {openMenu === item.key && (
+                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white"></span>
+                )}
+              </button>
+            </div>
+          ))}
 
-          {/* Mobile Toggle */}
-          <button className="md:hidden text-white" onClick={toggleMenu}>
-            {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          <button className="hover:opacity-80">Promotions</button>
+          <button className="hover:opacity-80">Blog</button>
+        </div>
+
+        {/* Desktop Right buttons */}
+        <div className="hidden md:flex items-center gap-4">
+          <button className="border border-white px-4 py-2 rounded hover:bg-white hover:text-[#c33c44] transition">
+            Login
+          </button>
+          <button className="bg-[#e74c3c] text-white px-4 py-2 rounded hover:opacity-80 transition">
+            Open An Account
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div className="md:hidden bg-[#1f3044] px-6 py-4">
-            <ul className="flex flex-col gap-4 font-medium">
-              {menuItems.map((item) =>
-                item.dropdown ? (
-                  <li key={item.name}>
-                    <button
-                      onClick={() => toggleDropdown(item.name)}
-                      className="flex items-center justify-between w-full"
+        {/* Mobile Hamburger */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden text-white"
+        >
+          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+
+      {/* Desktop Dropdowns */}
+      <AnimatePresence>
+        {openMenu && !mobileOpen && (
+          <motion.div
+            key={openMenu}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute left-0 w-full bg-[#c33c44] text-white shadow-lg overflow-hidden hidden md:block"
+          >
+            <div className="max-w-6xl mx-auto p-8 grid grid-cols-3 gap-10">
+              {menus[openMenu].map((menu, i) => (
+                <div key={i}>
+                  <p className="font-bold">{menu.title}</p>
+                  <p className="text-sm">{menu.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "100vh", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-[#c33c44] text-white p-6 flex flex-col gap-4 absolute top-full left-0 w-full"
+          >
+            {[
+              { label: "About Us", key: "about" },
+              { label: "Trading", key: "trading" },
+              { label: "Tools", key: "tools" },
+            ].map((item) => (
+              <div key={item.key}>
+                <button
+                  onClick={() => toggleMenu(item.key)}
+                  className="flex items-center justify-between w-full py-2 border-b border-white/30"
+                >
+                  {item.label}
+                  <motion.div
+                    animate={{ rotate: openMenu === item.key ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ChevronDown size={18} />
+                  </motion.div>
+                </button>
+
+                {/* Collapsible submenus */}
+                <AnimatePresence>
+                  {openMenu === item.key && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="pl-4 flex flex-col gap-2 py-2"
                     >
-                      {item.name} <FaChevronDown size={12} />
-                    </button>
-                    {dropdownOpen === item.name && (
-                      <ul className="ml-4 mt-2 space-y-2 text-sm">
-                        {item.dropdown.map((sub, idx) => (
-                          <li key={idx} className="hover:text-red-400">
-                            <Link to={sub.link}>{sub.title}</Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                ) : (
-                  <li key={item.name}>
-                    <Link to={item.link}>{item.name}</Link>
-                  </li>
-                )
-              )}
-            </ul>
-            <div className="flex flex-col gap-3 mt-6">
-              <button className="px-5 py-2 border border-white rounded">
+                      {menus[item.key].map((menu, i) => (
+                        <p key={i} className="text-sm">
+                          {menu.title}
+                        </p>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+
+            <button className="text-left py-2 border-b border-white/30">
+              Promotions
+            </button>
+            <button className="text-left py-2 border-b border-white/30">
+              Blog
+            </button>
+
+            <div className="mt-6">
+              <button className="w-full border border-white px-4 py-2 rounded mb-3">
                 Login
               </button>
-              <button className="px-5 py-2 bg-red-500 rounded">
+              <button className="w-full bg-[#e74c3c] px-4 py-2 rounded">
                 Open An Account
               </button>
             </div>
-          </div>
+          </motion.div>
         )}
-      </nav>
-    </header>
+      </AnimatePresence>
+    </nav>
   );
 };
 
