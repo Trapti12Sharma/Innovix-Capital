@@ -9,26 +9,43 @@ const Navbar = () => {
   const menus = {
     about: [
       { title: "About Us", desc: "Learn more about us" },
-      {
-        title: "Regulations and Licences",
-        desc: "Fair and transparent trading",
-      },
-      { title: "Contact Us", desc: "Get in touch with us" },
-      { title: "Press Room", desc: "Coverage in the media" },
-      { title: "Awards & News", desc: "Awards and company news" },
+
       {
         title: "Deposits and Withdrawals",
+        desc: "Fast, hassle-free transactions",
+      },
+      {
+        title: "Trading Commissions and Fees",
         desc: "Fast, hassle-free transactions",
       },
     ],
     trading: [
       { title: "Trading Accounts", desc: "Choose your account type" },
-      { title: "Spreads & Conditions", desc: "Competitive pricing" },
-      { title: "Platforms", desc: "MT4, MT5 & more" },
+      { title: "Accounts Overview", desc: "Competitive pricing" },
+      { title: "Advantage Account", desc: "MT4, MT5 & more" },
+      { title: "Advantage Stocks Account", desc: "Choose your account type" },
+      { title: "Demo Accounts", desc: "Competitive pricing" },
+      { title: "MT4", desc: "MT4, MT5 & more" },
     ],
     tools: [
-      { title: "Calculators", desc: "Calculate important forex data" },
-      { title: "Economic Calendar", desc: "Latest event information" },
+      { title: "Margin Calculators", desc: "Calculate important forex data" },
+      { title: "Profit Calculators", desc: "Calculate important forex data" },
+      { title: "Trading Signals", desc: "Calculate important forex data" },
+      { title: "Pro Trading Tools", desc: "Calculate important forex data" },
+      { title: "Tools Overview", desc: "Calculate important forex data" },
+    ],
+    markets: [
+      { title: "Forex", desc: "Trade global currency pairs" },
+      { title: "Commodities", desc: "Gold, Oil & more" },
+      { title: "Indices", desc: "Global indices trading" },
+      { title: "Stocks", desc: "Access top companies" },
+      { title: "Cryptos", desc: "Global indices trading" },
+      { title: "Metals", desc: "Access top companies" },
+    ],
+    contact: [
+      { title: "Contact Form", desc: "Reach out to us anytime" },
+      { title: "Office Locations", desc: "Find our global offices" },
+      { title: "Support", desc: "24/7 customer support" },
     ],
   };
 
@@ -68,6 +85,8 @@ const Navbar = () => {
             { label: "About Us", key: "about" },
             { label: "Trading", key: "trading" },
             { label: "Tools", key: "tools" },
+            { label: "Markets", key: "markets" },
+            { label: "Contact Us", key: "contact" },
           ].map((item) => (
             <div key={item.key} className="relative">
               <button
@@ -88,9 +107,6 @@ const Navbar = () => {
               </button>
             </div>
           ))}
-
-          <button className="hover:opacity-80">Promotions</button>
-          <button className="hover:opacity-80">Blog</button>
         </div>
 
         {/* Desktop Right buttons */}
@@ -149,6 +165,8 @@ const Navbar = () => {
               { label: "About Us", key: "about" },
               { label: "Trading", key: "trading" },
               { label: "Tools", key: "tools" },
+              { label: "Markets", key: "markets" },
+              { label: "Contact Us", key: "contact" },
             ].map((item) => (
               <div key={item.key}>
                 <button
@@ -184,13 +202,6 @@ const Navbar = () => {
                 </AnimatePresence>
               </div>
             ))}
-
-            <button className="text-left py-2 border-b border-white/30">
-              Promotions
-            </button>
-            <button className="text-left py-2 border-b border-white/30">
-              Blog
-            </button>
 
             <div className="mt-6">
               <button className="w-full border border-white px-4 py-2 rounded mb-3">

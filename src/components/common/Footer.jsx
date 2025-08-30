@@ -14,17 +14,10 @@ const Footer = () => {
       title: "ABOUT",
       links: [
         { label: "About Us", path: "/about-us" },
-        {
-          label: "Why Choose RightTrade Capital",
-          path: "/why-choose-righttrade-capital",
-        },
+
         {
           label: "Deposits and Withdrawals",
           path: "/deposits-and-withdrawals",
-        },
-        {
-          label: "Trading Commissions and Fees",
-          path: "/trading-commissions-and-fees",
         },
       ],
     },
@@ -159,12 +152,12 @@ const Footer = () => {
               <ul className="space-y-3 text-md text-gray-300 leading-relaxed">
                 <li>
                   <strong className="text-white">
-                    RightTrade Capital Limited:
+                    InnovixCapital Limited:
                   </strong>
                   <br />
                 </li>
                 <li>
-                  <strong className="text-white">RightTrade Capital :</strong>
+                  <strong className="text-white">InnovixCapital :</strong>
                   <br />
                 </li>
               </ul>
@@ -178,30 +171,30 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
         <div className="text-sm leading-relaxed space-y-3 text-gray-400">
           <p>
-            <strong className="text-white">RightTrade Capital brand</strong> is
+            <strong className="text-white">InnovixCapital brand</strong> is
             authorized and regulated in various jurisdictions.
           </p>
           <p>
-            <strong className="text-white">RightTrade Capital Limited</strong>{" "}
+            <strong className="text-white">InnovixCapital Limited</strong>{" "}
             (www.RightTradeCapital.com) is regulated by the Financial Services
             Commission of the Republic of Mauritius, FSCA of South Africa, and
             is a licensed Over the Counter Derivative Provider.
           </p>
           <p>
-            <strong className="text-white">RightTrade Capital</strong> is
-            regulated by the Securities and Commodities Authority of the UAE.
+            <strong className="text-white">InnovixCapital</strong> is regulated
+            by the Securities and Commodities Authority of the UAE.
           </p>
           <p>
-            <strong className="text-white">RightTrade Capital Ltd</strong> is
+            <strong className="text-white">InnovixCapital Ltd</strong> is
             regulated by the Capital Markets Authority of Kenya.
           </p>
           <p>
-            <strong className="text-white">RightTrade Capital Limited</strong>{" "}
-            is authorized and regulated by the Financial Conduct Authority, UK.
+            <strong className="text-white">InnovixCapital Limited</strong> is
+            authorized and regulated by the Financial Conduct Authority, UK.
           </p>
           <p>
             <strong className="text-white">
-              Risk Warning (RightTrade Capital Limited):
+              Risk Warning (InnovixCapital Limited):
             </strong>{" "}
             Trading leveraged instruments carries risk. You may lose more than
             you invest. Please ensure you fully understand the risks or seek
@@ -228,7 +221,7 @@ const Footer = () => {
 
           <div className="pt-4 border-t border-gray-700 mt-6">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-              <p className="text-gray-300">© 2011 - 2025 RightTrade Capital</p>
+              <p className="text-gray-300">© 2011 - 2025 InnovixCapital</p>
               <p>
                 <span className="text-blue-400 font-semibold">
                   Risk warning:
