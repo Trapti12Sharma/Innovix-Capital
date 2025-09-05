@@ -1,8 +1,9 @@
 import React from "react";
 import Banner from "../common/Banner";
-import CalculatorTabs from "../common/CalculatorTabs";
+
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
+import SideImageTextSection from "../common/SideImageTextSection";
 
 const TradingSignals = () => {
   const buttons = [
@@ -66,108 +67,21 @@ const TradingSignals = () => {
         bgImage="/about1.jpg"
       />
 
-      <CalculatorTabs
-        tabs={[
-          {
-            label: "Pip Calculator",
-            title: "Pip Calculator",
-            formFields: [
-              {
-                label: "Account Currency",
-                type: "select",
-                value: "EUR",
-                options: ["EUR", "USD", "GBP"],
-              },
-              {
-                label: "Currency Pair",
-                type: "select",
-                value: "EUR/USD",
-                options: ["EUR/USD", "GBP/USD", "USD/JPY"],
-              },
-              {
-                label: "Trade Size (In units)",
-                type: "number",
-                value: "10000",
-              },
-            ],
-            extraInfo: {
-              label: "Conversion Price (EUR/USD):",
-              value: "1.16885",
-            },
-            result: { label: "Pip Value (EUR):", value: "0.86" },
-            info: [
-              { label: "Account currency:", value: "EUR" },
-              { label: "Currency Pair:", value: "EUR/USD" },
-              { label: "Trade size (in units):", value: "10,000" },
-              { label: "One pip in decimals:", value: "0.0001" },
-              { label: "Exchange Rate (EUR/USD):", value: "1.16885" },
-              { label: "Formula:", value: "0.0001 * 10,000 / 1.16885 = 0.86" },
-              { label: "Each pip is worth:", value: "0.86 (in EUR)" },
-            ],
-          },
-          {
-            label: "Currency Converter",
-            title: "Currency Converter",
-            formFields: [
-              {
-                label: "From",
-                type: "select",
-                value: "USD",
-                options: ["USD", "EUR", "GBP"],
-              },
-              {
-                label: "To",
-                type: "select",
-                value: "EUR",
-                options: ["EUR", "USD", "GBP"],
-              },
-              { label: "Amount", type: "number", value: "100" },
-            ],
-            extraInfo: { label: "Conversion Rate:", value: "0.85" },
-            result: { label: "Converted Value:", value: "85 EUR" },
-            info: [
-              { label: "From:", value: "USD" },
-              { label: "To:", value: "EUR" },
-              { label: "Amount:", value: "100" },
-              { label: "Rate:", value: "0.85" },
-              { label: "Converted:", value: "85 EUR" },
-            ],
-          },
-          {
-            label: "Margin Calculator",
-            title: "Margin Calculator",
-            formFields: [
-              {
-                label: "Account Currency",
-                type: "select",
-                value: "USD",
-                options: ["USD", "EUR", "GBP"],
-              },
-              {
-                label: "Currency Pair",
-                type: "select",
-                value: "USD/JPY",
-                options: ["USD/JPY", "EUR/USD"],
-              },
-              { label: "Leverage", type: "number", value: "100" },
-              {
-                label: "Trade Size (In units)",
-                type: "number",
-                value: "10000",
-              },
-            ],
-            extraInfo: { label: "Exchange Rate:", value: "110.50" },
-            result: { label: "Required Margin:", value: "90.50 USD" },
-            info: [
-              { label: "Account currency:", value: "USD" },
-              { label: "Currency Pair:", value: "USD/JPY" },
-              { label: "Leverage:", value: "1:100" },
-              { label: "Trade size:", value: "10,000" },
-              { label: "Exchange Rate:", value: "110.50" },
-              { label: "Margin:", value: "90.50 USD" },
-            ],
-          },
+      <SideImageTextSection
+        image="/trading1.png"
+        bgColor="bg-[#0B2A4D]"
+        textcolor="text-white"
+        title="How Do Trading Signals Work?"
+        paragraphTextColor="text-white"
+        paragraphs={[
+          "Three times a day, before the European, US, and Asian sessions, trading signals are sent out.They assist you:",
         ]}
+        listItems={[
+          "Find good trading chances in Forex, indices, commodities, and stocks.",
+          "Don't waste time on long technical analysis.",
+          "Make your trading strategy better by setting defined entry, stop-loss, and take-profit levels.",
+        ]}
+        description=" Important: Trading signals don't guarantee profits, but they are a great way to help you make better decisions."
       />
 
       <FAQAccordion

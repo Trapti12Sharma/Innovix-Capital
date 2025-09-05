@@ -23,7 +23,7 @@ function Home() {
       title: "Innovix Capital Trader",
       description:
         "Our trading app is innovative, clutter-free and intuitive to use. Access and manage all your accounts, discover new opportunities, and trade our range of 300+ instruments directly from your phone.",
-      // image: homen2.png,
+      image: "/homen2.png",
       buttons: [
         { image: "/images/google-play.png", link: "https://play.google.com" },
         { image: "/images/app-store.png", link: "https://apple.com" },
