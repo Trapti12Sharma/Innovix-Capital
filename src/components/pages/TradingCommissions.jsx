@@ -42,7 +42,7 @@ const TradingCommissions = () => {
         "Withdrawals are usually processed within 1-5 working days depending on the method.",
     },
     {
-      question: "Are my funds safe with HYCM?",
+      question: "Are my funds safe with Innovix Capital?",
       answer:
         "Yes, your funds are kept in segregated accounts and regulated by top authorities.",
     },

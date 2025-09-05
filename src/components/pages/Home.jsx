@@ -21,8 +21,8 @@ function Home() {
 
   const platformTabs = [
     {
-      tabName: "HYCM Trader",
-      title: "HYCM Trader",
+      tabName: "Innovix Capital Trader",
+      title: "Innovix Capital Trader",
       description:
         "Our trading app is innovative, clutter-free and intuitive to use. Access and manage all your accounts, discover new opportunities, and trade our range of 300+ instruments directly from your phone.",
       image: heroImage1,
@@ -125,7 +125,7 @@ function Home() {
         />
 
         <ToolsSection
-          title="HYCM Financial Tools"
+          title="Innovix Capital Financial Tools"
           subtitle="Benefit from our wide range of tools, including calculators and free access to services like Seasonax and Financial Source."
           tools={tools}
         />
@@ -137,7 +137,7 @@ function Home() {
         />
 
         <AccountFeatures
-          title="Unleash Your Trading Potential with HYCM Trading Account"
+          title="Unleash Your Trading Potential with Innovix Capital Trading Account"
           features={featuresData}
           note={{
             text: "**Only for certain products. For more information",

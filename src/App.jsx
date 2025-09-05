@@ -33,9 +33,7 @@ import Cryptos from "./components/pages/Cryptos.jsx";
 import Metals from "./components/pages/Metals.jsx";
 
 // Contact Us
-import ContactForm from "./components/pages/ContactForm.jsx";
-import OfficeLocations from "./components/pages/OfficeLocations.jsx";
-import Support from "./components/pages/Support.jsx";
+import ContactUs from "./components/pages/ContactUs.jsx";
 
 function App() {
   return (
@@ -78,9 +76,7 @@ function App() {
         <Route path="/metals" element={<Metals />} />
 
         {/* Contact Us */}
-        <Route path="/contact-form" element={<ContactForm />} />
-        <Route path="/office-locations" element={<OfficeLocations />} />
-        <Route path="/support" element={<Support />} />
+        <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
 
       <Footer />

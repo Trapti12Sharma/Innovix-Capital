@@ -79,7 +79,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#1a1f3c] text-white ">
+    <footer className="bg-[#0B2A4D] text-white ">
       <div className="w-full border-t border-gray-600"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
@@ -91,7 +91,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaTwitter className="text-[#FBBD15] cursor-pointer hover:text-gray-300 transition-colors duration-200" />
+              <FaTwitter className="text-white cursor-pointer hover:text-gray-300 transition-colors duration-200" />
             </a>
 
             <a
@@ -99,7 +99,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaInstagram className="text-[#FBBD15] cursor-pointer hover:text-gray-300 transition-colors duration-200" />
+              <FaInstagram className="text-white cursor-pointer hover:text-gray-300 transition-colors duration-200" />
             </a>
 
             <a
@@ -107,7 +107,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaFacebookF className="text-[#FBBD15] cursor-pointer hover:text-gray-300 transition-colors duration-200" />
+              <FaFacebookF className="text-white cursor-pointer hover:text-gray-300 transition-colors duration-200" />
             </a>
           </div>
         </div>

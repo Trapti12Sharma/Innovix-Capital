@@ -3,21 +3,21 @@ import Banner from "../common/Banner";
 import MobileTradingSection from "../common/MobileTradingSection";
 import AccountSection from "../common/AccountSection";
 import VipCard from "../common/VipCard";
-import vipImage from "../../assets/vipN.png";
+import vipImage from "../../assets/vipn.png";
 import bgBanner1 from "../../assets/about1.jpg";
 import phoneImage from "../../assets/mt4n.jpg";
 
 const TradingAccounts = () => {
   return (
     <>
-      <Banner title="Deposit & Withdrawal Information" bgImage={bgBanner1} />
+      <Banner title="Trading Account" bgImage={bgBanner1} />
       <AccountSection
         sectionTitle="An Account To Suit Your Needs"
         cards={[
           {
             title: "Live & Demo",
             description:
-              "HYCM offers its clients both live and demo accounts with a choice of different account types according to individual requirements.",
+              "Innovix Capital offers its clients both live and demo accounts with a choice of different account types according to individual requirements.",
           },
           {
             title: "Special",

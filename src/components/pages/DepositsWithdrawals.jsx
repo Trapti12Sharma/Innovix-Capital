@@ -3,7 +3,7 @@ import Banner from "../common/Banner";
 import PaymentTable from "../common/PaymentTable";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
-import bgBanner from "../../assets/depositW1.jpg";
+import bgBanner from "../../assets/depositw1.jpg";
 
 const DepositsWithdrawals = () => {
   const buttons = [
@@ -43,7 +43,7 @@ const DepositsWithdrawals = () => {
         "Withdrawals are usually processed within 1-5 working days depending on the method.",
     },
     {
-      question: "Are my funds safe with HYCM?",
+      question: "Are my funds safe with Innovix Capital?",
       answer:
         "Yes, your funds are kept in segregated accounts and regulated by top authorities.",
     },
@@ -58,6 +58,7 @@ const DepositsWithdrawals = () => {
         "Our payments are processed securely via regulated international gateways.",
     },
   ];
+
   const Deposits = [
     {
       icon: "/icons/bank.png",
@@ -110,7 +111,7 @@ const DepositsWithdrawals = () => {
 
       <PaymentTable
         tabs={{ Deposits, Withdrawals }}
-        note="¹HYCM does not charge on deposits, however there might be charges from the banks that are then deducted from the amount that you will receive."
+        note="¹Innovix Capital does not charge on deposits, however there might be charges from the banks that are then deducted from the amount that you will receive."
       />
 
       <FAQAccordion

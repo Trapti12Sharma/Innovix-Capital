@@ -3,14 +3,14 @@ import Banner from "../common/Banner";
 import MobileTradingSection from "../common/MobileTradingSection";
 import AccountSection from "../common/AccountSection";
 import VipCard from "../common/VipCard";
-import vipImage from "../../assets/vipN.png";
+import vipImage from "../../assets/vipn.png";
 import bgBanner1 from "../../assets/about1.jpg";
 import phoneImage from "../../assets/mt4n.jpg";
 
 const MT4 = () => {
   return (
     <>
-      <Banner title="Deposit & Withdrawal Information" bgImage={bgBanner1} />
+      <Banner title="Meta Trader" bgImage={bgBanner1} />
 
       <MobileTradingSection
         title="Mobile Trading With MT4"
@@ -36,7 +36,7 @@ const MT4 = () => {
           {
             title: "Live & Demo",
             description:
-              "HYCM offers its clients both live and demo accounts with a choice of different account types according to individual requirements.",
+              "Innovix Capital offers its clients both live and demo accounts with a choice of different account types according to individual requirements.",
           },
           {
             title: "Special",

@@ -87,16 +87,10 @@ const Navbar = () => {
     ],
     contact: [
       {
-        title: "Contact Form",
+        title: "Contact Us",
         desc: "Reach out to us anytime",
-        path: "/contact-form",
+        path: "/contact-us",
       },
-      {
-        title: "Office Locations",
-        desc: "Find our global offices",
-        path: "/office-locations",
-      },
-      { title: "Support", desc: "24/7 customer support", path: "/support" },
     ],
   };
 
@@ -107,7 +101,7 @@ const Navbar = () => {
   return (
     <nav className="w-full font-sans z-50">
       {/* Top black bar */}
-      <div className="bg-black text-white flex justify-between px-4 md:px-8 py-2 text-sm">
+      <div className="bg-[#0B2A4D] text-white flex justify-between px-4 md:px-8 py-2 text-sm">
         <div className="flex gap-4 md:gap-6">
           <span>⚝ Partnership</span>
           <span>📞 Help Center</span>
@@ -121,7 +115,7 @@ const Navbar = () => {
       {/* Navbar */}
       <div
         className={`text-white px-4 md:px-8 py-3 flex items-center justify-between relative transition-colors duration-300 ${
-          openMenu || mobileOpen ? "bg-[#c33c44]" : "bg-[#0d223d]"
+          openMenu || mobileOpen ? "bg-[#2A8A9D]" : "bg-[#0d223d]"
         }`}
       >
         {/* ✅ Logo replace */}
@@ -161,10 +155,10 @@ const Navbar = () => {
 
         {/* Desktop Right buttons */}
         <div className="hidden md:flex items-center gap-4">
-          <button className="border border-white px-4 py-2 rounded hover:bg-white hover:text-[#c33c44] transition">
+          <button className="border border-white px-4 py-2 rounded hover:bg-white hover:text-[#2A8A9D] transition">
             Login
           </button>
-          <button className="bg-[#e74c3c] text-white px-4 py-2 rounded hover:opacity-80 transition">
+          <button className="bg-[#2A8A9D] text-white px-4 py-2 rounded hover:opacity-80 transition">
             Open An Account
           </button>
         </div>
@@ -188,7 +182,7 @@ const Navbar = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="w-full bg-[#c33c44] text-white shadow-lg overflow-hidden md:block relative"
+            className="w-full bg-[#2A8A9D] text-white shadow-lg overflow-hidden md:block relative"
           >
             <div className="max-w-6xl mx-auto p-8 grid grid-cols-3 gap-10">
               {menus[openMenu].map((menu, i) => (
@@ -215,7 +209,7 @@ const Navbar = () => {
             animate={{ height: "100vh", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="w-full bg-[#c33c44] text-white shadow-lg overflow-hidden md:block relative"
+            className="w-full bg-[#2A8A9D] text-white shadow-lg overflow-hidden md:block relative"
           >
             {[
               { label: "About Us", key: "about" },
@@ -271,7 +265,7 @@ const Navbar = () => {
               <button className="w-full border border-white px-4 py-2 rounded mb-3">
                 Login
               </button>
-              <button className="w-full bg-[#e74c3c] px-4 py-2 rounded">
+              <button className="w-full bg-[#2A8A9D] px-4 py-2 rounded">
                 Open An Account
               </button>
             </div>

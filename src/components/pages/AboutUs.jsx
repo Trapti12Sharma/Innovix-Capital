@@ -40,7 +40,7 @@ const AboutUs = () => {
 
       <StatsSection
         title="A Reliable Group"
-        description="HYCM provides a <strong>reliable service</strong> to its client base with a reputation that is second to none."
+        description="Innovix Capital provides a <strong>reliable service</strong> to its client base with a reputation that is second to none."
         stats={statsData2}
       />
     </>
