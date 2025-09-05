@@ -3,14 +3,11 @@ import Banner from "../common/Banner";
 import MobileTradingSection from "../common/MobileTradingSection";
 import AccountSection from "../common/AccountSection";
 import VipCard from "../common/VipCard";
-import vipImage from "../../assets/vipn.png";
-import bgBanner1 from "../../assets/about1.jpg";
-import phoneImage from "../../assets/mt4n.jpg";
 
 const TradingAccounts = () => {
   return (
     <>
-      <Banner title="Trading Account" bgImage={bgBanner1} />
+      <Banner title="Trading Account" bgImage="/about1.jpg" />
       <AccountSection
         sectionTitle="An Account To Suit Your Needs"
         cards={[
@@ -31,7 +28,7 @@ const TradingAccounts = () => {
         title="VIP"
         subtitle="Bigger, Better, More"
         badge="VIP Accounts"
-        image={vipImage}
+        image="/vipn.png"
         features={[
           "Dedicated Account Manager",
           "Comprehensive Market Analytics",
@@ -42,7 +39,7 @@ const TradingAccounts = () => {
         title="Mobile Trading With MT4"
         description="Open, manage and close your trading positions on the go with complete control over your trading account from your mobile phone."
         subDescription="Download MetaTrader 4 for Android/IOS on your smartphone or tablet and trade Forex anytime and everywhere in the world!"
-        image={phoneImage}
+        image="/mt4n.jpg"
         // buttons={[
         //   {
         //     image: googlePlay,

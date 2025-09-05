@@ -3,7 +3,6 @@ import Banner from "../common/Banner";
 import PaymentTable from "../common/PaymentTable";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
-import bgBanner from "../../assets/depositw1.jpg";
 
 const Cryptos = () => {
   const buttons = [
@@ -107,7 +106,7 @@ const Cryptos = () => {
 
   return (
     <>
-      <Banner title="Cryptos" bgImage={bgBanner} />
+      <Banner title="Cryptos" bgImage="/depositw1.jpg" />
 
       <PaymentTable
         tabs={{ Deposits, Withdrawals }}

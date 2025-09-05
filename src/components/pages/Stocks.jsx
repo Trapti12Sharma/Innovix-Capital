@@ -4,7 +4,6 @@ import PaymentTable from "../common/PaymentTable";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
 import StatsSection from "../common/StatsSection";
-import bgBanner from "../../assets/depositw1.jpg";
 
 const Stocks = () => {
   const statsData2 = [
@@ -117,7 +116,7 @@ const Stocks = () => {
 
   return (
     <>
-      <Banner title="Stocks" bgImage={bgBanner} />
+      <Banner title="Stocks" bgImage="/depositw1.jpg" />
 
       <PaymentTable
         tabs={{ Deposits, Withdrawals }}

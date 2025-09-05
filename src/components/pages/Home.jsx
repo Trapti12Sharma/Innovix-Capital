@@ -7,8 +7,6 @@ import { PenTool, Wallet, BarChart } from "lucide-react";
 import ToolsSection from "../common/ToolsSection";
 import PlatformTabs from "../common/PlatformTabs";
 import AccountFeatures from "../common/AccountFeatures";
-import heroImage from "../../assets/heron1.png";
-import heroImage1 from "../../assets/homen2.png";
 
 function Home() {
   const featuresData = [
@@ -25,7 +23,7 @@ function Home() {
       title: "Innovix Capital Trader",
       description:
         "Our trading app is innovative, clutter-free and intuitive to use. Access and manage all your accounts, discover new opportunities, and trade our range of 300+ instruments directly from your phone.",
-      image: heroImage1,
+      // image: homen2.png,
       buttons: [
         { image: "/images/google-play.png", link: "https://play.google.com" },
         { image: "/images/app-store.png", link: "https://apple.com" },
@@ -108,7 +106,7 @@ function Home() {
           description=""
           buttonText="Get started"
           buttonLink="/get-started"
-          imageSrc={heroImage}
+          imageSrc="/heron1.png"
         />
 
         <FeatureSection

@@ -3,7 +3,6 @@ import Banner from "../common/Banner";
 import PaymentTable from "../common/PaymentTable";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
-import bgBanner from "../../assets/depositw1.jpg";
 
 const DepositsWithdrawals = () => {
   const buttons = [
@@ -107,7 +106,10 @@ const DepositsWithdrawals = () => {
 
   return (
     <>
-      <Banner title="Deposit & Withdrawal Information" bgImage={bgBanner} />
+      <Banner
+        title="Deposit & Withdrawal Information"
+        bgImage="/depositw1.jpg"
+      />
 
       <PaymentTable
         tabs={{ Deposits, Withdrawals }}

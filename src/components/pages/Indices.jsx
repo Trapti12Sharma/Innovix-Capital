@@ -3,7 +3,6 @@ import Banner from "../common/Banner";
 import PaymentTable from "../common/PaymentTable";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
-import bgBanner from "../../assets/depositw1.jpg";
 
 const Indices = () => {
   const buttons = [
@@ -107,7 +106,7 @@ const Indices = () => {
 
   return (
     <>
-      <Banner title="Indices" bgImage={bgBanner} />
+      <Banner title="Indices" bgImage="/depositw1.jpg" />
 
       <PaymentTable
         tabs={{ Deposits, Withdrawals }}

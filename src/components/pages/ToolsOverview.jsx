@@ -3,7 +3,6 @@ import Banner from "../common/Banner";
 import CalculatorTabs from "../common/CalculatorTabs";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
-import bgBanner1 from "../../assets/about1.jpg";
 
 const ToolsOverview = () => {
   const buttons = [
@@ -64,7 +63,7 @@ const ToolsOverview = () => {
         title="Tools Overview"
         subtitle="Trading conditions at a glance:"
         description="Fast execution, tight spreads and a choice of account types for every trading style."
-        bgImage={bgBanner1}
+        bgImage="/about1.jpg"
       />
 
       <CalculatorTabs

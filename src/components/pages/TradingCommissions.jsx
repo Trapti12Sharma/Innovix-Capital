@@ -2,7 +2,6 @@ import React from "react";
 import Banner from "../common/Banner";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
-import bgBanner1 from "../../assets/about1.jpg";
 
 const TradingCommissions = () => {
   const buttons = [
@@ -63,7 +62,7 @@ const TradingCommissions = () => {
         title="About Us"
         subtitle="Trading conditions at a glance:"
         description="Fast execution, tight spreads and a choice of account types for every trading style."
-        bgImage={bgBanner1}
+        bgImage="/about1.jpg"
       />
 
       <FAQAccordion

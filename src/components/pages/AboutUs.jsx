@@ -2,8 +2,7 @@ import React from "react";
 import Banner from "../common/Banner";
 import StatsCards from "../common/StatsCards";
 import MobileTradingSection from "../common/MobileTradingSection";
-import bgBanner from "../../assets/about.jpg";
-import bgBanner1 from "../../assets/about1.jpg";
+
 import StatsSection from "../common/StatsSection";
 
 const AboutUs = () => {
@@ -28,14 +27,14 @@ const AboutUs = () => {
         title="About Us"
         subtitle="Trading conditions at a glance:"
         description="Fast execution, tight spreads and a choice of account types for every trading style."
-        bgImage={bgBanner}
+        bgImage="/about.jpg"
       />
 
       <StatsCards stats={statsData} />
 
       <Banner
         title="40+ years of Group cumulative experience"
-        bgImage={bgBanner1}
+        bgImage="/about1.jpg"
       />
 
       <StatsSection

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/innovix.jpeg";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(null);
@@ -120,7 +119,7 @@ const Navbar = () => {
       >
         {/* ✅ Logo replace */}
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Logo" className="h-10 w-auto" />
+          <img src="/innovix.jpeg" alt="Logo" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop Nav Links */}
