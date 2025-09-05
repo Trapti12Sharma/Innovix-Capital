@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
+import logo from "../../assets/innovix.jpeg";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(null);
@@ -8,44 +10,93 @@ const Navbar = () => {
 
   const menus = {
     about: [
-      { title: "About Us", desc: "Learn more about us" },
-
+      { title: "About Us", desc: "Learn more about us", path: "/about-us" },
       {
         title: "Deposits and Withdrawals",
         desc: "Fast, hassle-free transactions",
+        path: "/deposits-withdrawals",
       },
       {
         title: "Trading Commissions and Fees",
         desc: "Fast, hassle-free transactions",
+        path: "/trading-commissions",
       },
     ],
     trading: [
-      { title: "Trading Accounts", desc: "Choose your account type" },
-      { title: "Accounts Overview", desc: "Competitive pricing" },
-      { title: "Advantage Account", desc: "MT4, MT5 & more" },
-      { title: "Advantage Stocks Account", desc: "Choose your account type" },
-      { title: "Demo Accounts", desc: "Competitive pricing" },
-      { title: "MT4", desc: "MT4, MT5 & more" },
+      {
+        title: "Trading Accounts",
+        desc: "Choose your account type",
+        path: "/trading-accounts",
+      },
+      {
+        title: "Accounts Overview",
+        desc: "Competitive pricing",
+        path: "/accounts-overview",
+      },
+      {
+        title: "Advantage Account",
+        desc: "MT4, MT5 & more",
+        path: "/advantage-account",
+      },
+      {
+        title: "Advantage Stocks Account",
+        desc: "Choose your account type",
+        path: "/advantage-stocks-account",
+      },
+      {
+        title: "Demo Accounts",
+        desc: "Competitive pricing",
+        path: "/demo-accounts",
+      },
+      { title: "MT4", desc: "MT4, MT5 & more", path: "/mt4" },
     ],
     tools: [
-      { title: "Margin Calculators", desc: "Calculate important forex data" },
-      { title: "Profit Calculators", desc: "Calculate important forex data" },
-      { title: "Trading Signals", desc: "Calculate important forex data" },
-      { title: "Pro Trading Tools", desc: "Calculate important forex data" },
-      { title: "Tools Overview", desc: "Calculate important forex data" },
+      {
+        title: "Margin Calculators",
+        desc: "Calculate important forex data",
+        path: "/margin-calculators",
+      },
+      {
+        title: "Profit Calculators",
+        desc: "Calculate important forex data",
+        path: "/profit-calculators",
+      },
+      {
+        title: "Trading Signals",
+        desc: "Calculate important forex data",
+        path: "/trading-signals",
+      },
+      {
+        title: "Pro Trading Tools",
+        desc: "Calculate important forex data",
+        path: "/pro-trading-tools",
+      },
+      {
+        title: "Tools Overview",
+        desc: "Calculate important forex data",
+        path: "/tools-overview",
+      },
     ],
     markets: [
-      { title: "Forex", desc: "Trade global currency pairs" },
-      { title: "Commodities", desc: "Gold, Oil & more" },
-      { title: "Indices", desc: "Global indices trading" },
-      { title: "Stocks", desc: "Access top companies" },
-      { title: "Cryptos", desc: "Global indices trading" },
-      { title: "Metals", desc: "Access top companies" },
+      { title: "Forex", desc: "Trade global currency pairs", path: "/forex" },
+      { title: "Commodities", desc: "Gold, Oil & more", path: "/commodities" },
+      { title: "Indices", desc: "Global indices trading", path: "/indices" },
+      { title: "Stocks", desc: "Access top companies", path: "/stocks" },
+      { title: "Cryptos", desc: "Trade digital assets", path: "/cryptos" },
+      { title: "Metals", desc: "Access top companies", path: "/metals" },
     ],
     contact: [
-      { title: "Contact Form", desc: "Reach out to us anytime" },
-      { title: "Office Locations", desc: "Find our global offices" },
-      { title: "Support", desc: "24/7 customer support" },
+      {
+        title: "Contact Form",
+        desc: "Reach out to us anytime",
+        path: "/contact-form",
+      },
+      {
+        title: "Office Locations",
+        desc: "Find our global offices",
+        path: "/office-locations",
+      },
+      { title: "Support", desc: "24/7 customer support", path: "/support" },
     ],
   };
 
@@ -54,7 +105,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full font-sans relative">
+    <nav className="w-full font-sans z-50">
       {/* Top black bar */}
       <div className="bg-black text-white flex justify-between px-4 md:px-8 py-2 text-sm">
         <div className="flex gap-4 md:gap-6">
@@ -73,11 +124,10 @@ const Navbar = () => {
           openMenu || mobileOpen ? "bg-[#c33c44]" : "bg-[#0d223d]"
         }`}
       >
-        {/* Logo */}
-        <div className="text-2xl font-bold tracking-wider">
-          HY<span className="text-white">CM</span>
-          <div className="text-xs font-normal -mt-1">Capital Markets</div>
-        </div>
+        {/* ✅ Logo replace */}
+        <Link to="/" className="flex items-center gap-2">
+          <img src={logo} alt="Logo" className="h-10 w-auto" />
+        </Link>
 
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium relative">
@@ -129,6 +179,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Dropdowns */}
+
       <AnimatePresence>
         {openMenu && !mobileOpen && (
           <motion.div
@@ -137,14 +188,19 @@ const Navbar = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="absolute left-0 w-full bg-[#c33c44] text-white shadow-lg overflow-hidden hidden md:block"
+            className="w-full bg-[#c33c44] text-white shadow-lg overflow-hidden md:block relative"
           >
             <div className="max-w-6xl mx-auto p-8 grid grid-cols-3 gap-10">
               {menus[openMenu].map((menu, i) => (
-                <div key={i}>
+                <Link
+                  to={menu.path}
+                  key={i}
+                  className="block hover:opacity-80"
+                  onClick={() => setOpenMenu(null)}
+                >
                   <p className="font-bold">{menu.title}</p>
                   <p className="text-sm">{menu.desc}</p>
-                </div>
+                </Link>
               ))}
             </div>
           </motion.div>
@@ -159,7 +215,7 @@ const Navbar = () => {
             animate={{ height: "100vh", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#c33c44] text-white p-6 flex flex-col gap-4 absolute top-full left-0 w-full"
+            className="w-full bg-[#c33c44] text-white shadow-lg overflow-hidden md:block relative"
           >
             {[
               { label: "About Us", key: "about" },
@@ -193,9 +249,17 @@ const Navbar = () => {
                       className="pl-4 flex flex-col gap-2 py-2"
                     >
                       {menus[item.key].map((menu, i) => (
-                        <p key={i} className="text-sm">
+                        <Link
+                          to={menu.path}
+                          key={i}
+                          className="text-sm hover:opacity-80 block"
+                          onClick={() => {
+                            setMobileOpen(false);
+                            setOpenMenu(null);
+                          }}
+                        >
                           {menu.title}
-                        </p>
+                        </Link>
                       ))}
                     </motion.div>
                   )}
