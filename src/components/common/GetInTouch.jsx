@@ -16,8 +16,8 @@ const GetInTouch = ({ title, buttons, helpLink, features }) => {
             href={btn.link}
             className={`px-6 py-3 rounded-md font-medium text-center transition-all ${
               btn.type === "primary"
-                ? "bg-blue-500 text-white hover:bg-blue-600"
-                : "bg-blue-50 text-blue-600 hover:bg-blue-100"
+                ? "bg-[#2A8A9D] text-white hover:bg-[#2A8A9D]"
+                : "bg-blue-50 text-[#2A8A9D] hover:bg-[#2A8A9D]"
             }`}
           >
             {btn.label}

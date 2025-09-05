@@ -12,7 +12,8 @@ const FAQAccordion = ({ title, highlight, faqs }) => {
     <section className="w-full flex flex-col items-center px-4 py-12">
       {/* Heading */}
       <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
-        {title} {highlight && <span className="text-red-500">{highlight}</span>}
+        {title}{" "}
+        {highlight && <span className="text-[#2A8A9D]">{highlight}</span>}
       </h2>
 
       {/* FAQ List */}

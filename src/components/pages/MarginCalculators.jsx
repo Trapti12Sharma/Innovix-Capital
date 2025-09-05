@@ -3,8 +3,18 @@ import Banner from "../common/Banner";
 import CalculatorTabs from "../common/CalculatorTabs";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
+import FeatureSection from "../common/FeatureSection1";
+import HowToWithdrawSection from "../common/HowToWithdrawSection";
+import SecurityRegulationSection from "../common/SecurityRegulationSection";
 
 const MarginCalculators = () => {
+  const withdrawSteps = [
+    "Pick the currency for your account (USD, EUR, GBP, etc.)",
+    "Choose the currency pair(s) you want to trade",
+    "Set the size of your position and see how much margin you need right away",
+    "Fill in the required fields and click Submit.",
+  ];
+
   const buttons = [
     { label: "Contact Us", link: "/contact", type: "primary" },
     { label: "Live-Chat", link: "/chat", type: "secondary" },
@@ -64,6 +74,26 @@ const MarginCalculators = () => {
         subtitle="Trading conditions at a glance:"
         description="Fast execution, tight spreads and a choice of account types for every trading style."
         bgImage="/about1.jpg"
+      />
+
+      <FeatureSection
+        title="In Forex trading, what is margin?"
+        paragraph="To open and keep a forex position, you need to put down a certain amount of money as collateral. This is called margin.
+        It's not a fee or cost; it's just a percentage of your trade size that your broker keeps as insurance.
+        Still not sure what margin is? Check out our short video guide to learn more about margin in forex trading.
+        "
+      />
+
+      <SecurityRegulationSection
+        image="/signup.png"
+        title="Do a Thorough Analysis of the Market"
+        introParagraph="Use sophisticated trading indicators and technical analysis tools to look at how the market is moving."
+        bulletPoints={[
+          "Keep an eye on how strong a currency is in real time.",
+          "Find bullish and bearish extremes with accuracy.",
+          "Find the right indication for your plan.",
+        ]}
+        closingParagraph="Pro Trading Tools provide you the advantage to trade with confidence, whether you're day trading, swing trading, or investing for the long term."
       />
 
       <CalculatorTabs
@@ -168,6 +198,11 @@ const MarginCalculators = () => {
             ],
           },
         ]}
+      />
+
+      <HowToWithdrawSection
+        title="How does the Forex Margin Calculator work?"
+        steps={withdrawSteps}
       />
 
       <FAQAccordion

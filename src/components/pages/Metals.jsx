@@ -3,8 +3,59 @@ import Banner from "../common/Banner";
 import PaymentTable from "../common/PaymentTable";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
+import CurrencyInfoSection from "../common/CurrencyInfoSection";
+import MarketViewSteps from "../common/MarketViewSteps";
 
 const Metals = () => {
+  const stepsData = [
+    {
+      image:
+        "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
+      heading: "1.A lot of different kinds of digital money",
+      description:
+        "You can buy and sell Bitcoin (BTC), Ethereum (ETH), Litecoin (LTC), Ripple (XRP), and other altcoins all from the same account.",
+    },
+    {
+      image:
+        "https://images.pexels.com/photos/6802046/pexels-photo-6802046.jpeg",
+      heading: "2.Prices that are fair",
+      description:
+        " You get to keep more of your profits because the spreads are tight and the commissions are low.",
+    },
+    {
+      image:
+        "https://images.pexels.com/photos/6802047/pexels-photo-6802047.jpeg",
+      heading: "3.A lot of strength",
+      description:
+        " You can use up to 1:1000 leverage on the biggest cryptocurrencies. This means you can invest less money and still get more market exposure.",
+    },
+    {
+      image:
+        "https://images.pexels.com/photos/6802047/pexels-photo-6802047.jpeg",
+      heading: "4.Security at the business level",
+      description:
+        " We have to follow strict rules, and we keep your money separate from other clients' money and protect it with bank-level encryption.",
+    },
+    {
+      image:
+        "https://images.pexels.com/photos/6802047/pexels-photo-6802047.jpeg",
+      heading: "5.Quick execution",
+      description:
+        " We know that timing is very important in crypto. Our cryptocurrency trading platform processes orders in less than a second, so you can be sure you'll get the right amount.",
+    },
+  ];
+
+  const currencySectionData = {
+    title:
+      "How to Choose the Best Trading platform in India Without Getting Confused",
+    paragraphs: [
+      "Let’s not sugarcoat it—trying to pick the “right” forex broker in India can make even experienced traders feel like they’re playing darts in the dark. You Google a few names, read a dozen blog posts, maybe click on some reviews—and suddenly you’re more confused than when you started. One broker promises low spreads, another throws in a “welcome bonus,” and yet another claims lightning-fast withdrawals. But what does any of it mean for you, especially if you’re looking to get serious with cfd commodity trading or develop a reliable cfd indices trading strategy?",
+      "The truth is, this isn’t a decision you want to rush. Because your broker isn’t just a gateway—it’s the infrastructure behind your every trade, your safety net when something goes wrong, and in many ways, your partner. And like any partnership, if the foundation is shaky, everything that follows is at risk.",
+      "So, how do you cut through the clutter and choose wisely? Let’s break it down, step by step.",
+    ],
+    image: "/global.svg",
+  };
+
   const buttons = [
     { label: "Contact Us", link: "/contact", type: "primary" },
     { label: "Live-Chat", link: "/chat", type: "secondary" },
@@ -58,59 +109,15 @@ const Metals = () => {
     },
   ];
 
-  const Deposits = [
-    {
-      icon: "/icons/bank.png",
-      method: "Bank Transfer",
-      minimum: "US $20",
-      currency: "USD, EUR, GBP",
-      processing: "1 to 7 working days",
-      fees: "$0¹",
-    },
-    {
-      icon: "/icons/visa.png",
-      method: "Visa / Mastercard",
-      minimum: "US $20",
-      currency: "USD, EUR, GBP",
-      processing: "Up to 1 hour",
-      fees: "$0",
-    },
-    {
-      icon: "/icons/crypto.png",
-      method: "Crypto",
-      minimum: "US $20",
-      currency: "Crypto",
-      processing: "Up to 3 hours",
-      fees: "$0³",
-    },
-  ];
-
-  const Withdrawals = [
-    {
-      icon: "/icons/bank.png",
-      method: "Bank Transfer",
-      minimum: "US $100",
-      currency: "USD, EUR, GBP",
-      processing: "1 to 5 working days",
-      fees: "$5",
-    },
-    {
-      icon: "/icons/crypto.png",
-      method: "Crypto",
-      minimum: "US $50",
-      currency: "Crypto",
-      processing: "Up to 2 hours",
-      fees: "$0",
-    },
-  ];
-
   return (
     <>
       <Banner title="Metals" bgImage="/depositw1.jpg" />
 
-      <PaymentTable
-        tabs={{ Deposits, Withdrawals }}
-        note="¹Innovix Capital does not charge on deposits, however there might be charges from the banks that are then deducted from the amount that you will receive."
+      <CurrencyInfoSection {...currencySectionData} />
+
+      <MarketViewSteps
+        title="The Best Cryptocurrency Trading Platform – Why RightTrade Capital Leads"
+        steps={stepsData}
       />
 
       <FAQAccordion

@@ -15,7 +15,7 @@ const VipCard = ({ title, subtitle, badge, features, image }) => {
       {/* Right Side Content */}
       <div className="flex-1 flex flex-col items-start text-center md:text-left">
         {badge && (
-          <span className="bg-red-500 text-white font-semibold px-4 py-1 rounded-full text-sm mb-3">
+          <span className="bg-[#2A8A9D] text-white font-semibold px-4 py-1 rounded-full text-sm mb-3">
             {badge}
           </span>
         )}

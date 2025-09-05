@@ -3,8 +3,17 @@ import Banner from "../common/Banner";
 import CalculatorTabs from "../common/CalculatorTabs";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
+import HowToWithdrawSection from "../common/HowToWithdrawSection";
+import SecurityRegulationSection from "../common/SecurityRegulationSection";
 
 const ProTradingTools = () => {
+  const withdrawSteps = [
+    "Pick the currency for your account (USD, EUR, GBP, etc.)",
+    "Choose the currency pair(s) you want to trade",
+    "Set the size of your position and see how much margin you need right away",
+    "Fill in the required fields and click Submit.",
+  ];
+
   const buttons = [
     { label: "Contact Us", link: "/contact", type: "primary" },
     { label: "Live-Chat", link: "/chat", type: "secondary" },
@@ -168,6 +177,23 @@ const ProTradingTools = () => {
             ],
           },
         ]}
+      />
+
+      <SecurityRegulationSection
+        image="/signup.png"
+        title="Do a Thorough Analysis of the Market"
+        introParagraph="Use sophisticated trading indicators and technical analysis tools to look at how the market is moving."
+        bulletPoints={[
+          "Keep an eye on how strong a currency is in real time.",
+          "Find bullish and bearish extremes with accuracy.",
+          "Find the right indication for your plan.",
+        ]}
+        closingParagraph="Pro Trading Tools provide you the advantage to trade with confidence, whether you're day trading, swing trading, or investing for the long term."
+      />
+
+      <HowToWithdrawSection
+        title="How does the Forex Margin Calculator work?"
+        steps={withdrawSteps}
       />
 
       <FAQAccordion

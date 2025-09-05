@@ -2,10 +2,46 @@ import React from "react";
 import Banner from "../common/Banner";
 import StatsCards from "../common/StatsCards";
 import MobileTradingSection from "../common/MobileTradingSection";
+import AccountsSection from "../common/AccountsSection2";
 
 import StatsSection from "../common/StatsSection";
 
 const AboutUs = () => {
+  const accountsData = [
+    {
+      title: "Standard Account",
+      features: [
+        "No fees",
+        "Spreads that are competitive",
+        "You can use MT4, WebTrader, and mobile apps",
+      ],
+    },
+    {
+      title: "ECN Account",
+      features: [
+        "Raw spreads start at 0.0 pips",
+        "Low fees for trading",
+        "Execution at the level of institutions",
+      ],
+    },
+    {
+      title: "Islamic Account",
+      features: [
+        "No interest",
+        "Following Sharia",
+        "No charges for staying overnight",
+      ],
+    },
+    {
+      title: "Demo Account",
+      features: [
+        "A trading experience with no risk",
+        "A fake market environment",
+        "Great for testing and learning strategies",
+      ],
+    },
+  ];
+
   const statsData = [
     { title: "Spreads from", value: "0.1pips" },
     { title: "Avg. execution time under", value: "12ms" },
@@ -31,6 +67,13 @@ const AboutUs = () => {
       />
 
       <StatsCards stats={statsData} />
+
+      <AccountsSection
+        title="Types of Accounts"
+        subtitle="We have different types of accounts to meet the needs of different traders:"
+        accounts={accountsData}
+        bgcolor="bg-[#0B2A4D]"
+      />
 
       <Banner
         title="40+ years of Group cumulative experience"

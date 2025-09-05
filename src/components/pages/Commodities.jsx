@@ -3,8 +3,20 @@ import Banner from "../common/Banner";
 import PaymentTable from "../common/PaymentTable";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
+import CurrencyInfoSection from "../common/CurrencyInfoSection";
 
 const Commodities = () => {
+  const currencySectionData = {
+    title:
+      "How to Choose the Best Trading platform in India Without Getting Confused",
+    paragraphs: [
+      "Let’s not sugarcoat it—trying to pick the “right” forex broker in India can make even experienced traders feel like they’re playing darts in the dark. You Google a few names, read a dozen blog posts, maybe click on some reviews—and suddenly you’re more confused than when you started. One broker promises low spreads, another throws in a “welcome bonus,” and yet another claims lightning-fast withdrawals. But what does any of it mean for you, especially if you’re looking to get serious with cfd commodity trading or develop a reliable cfd indices trading strategy?",
+      "The truth is, this isn’t a decision you want to rush. Because your broker isn’t just a gateway—it’s the infrastructure behind your every trade, your safety net when something goes wrong, and in many ways, your partner. And like any partnership, if the foundation is shaky, everything that follows is at risk.",
+      "So, how do you cut through the clutter and choose wisely? Let’s break it down, step by step.",
+    ],
+    image: "/global.svg",
+  };
+
   const buttons = [
     { label: "Contact Us", link: "/contact", type: "primary" },
     { label: "Live-Chat", link: "/chat", type: "secondary" },
@@ -108,10 +120,7 @@ const Commodities = () => {
     <>
       <Banner title="Commodities" bgImage="/depositw1.jpg" />
 
-      <PaymentTable
-        tabs={{ Deposits, Withdrawals }}
-        note="¹Innovix Capital does not charge on deposits, however there might be charges from the banks that are then deducted from the amount that you will receive."
-      />
+      <CurrencyInfoSection {...currencySectionData} />
 
       <FAQAccordion
         title="Need More Information? Check Our"

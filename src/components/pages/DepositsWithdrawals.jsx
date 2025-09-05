@@ -2,9 +2,47 @@ import React from "react";
 import Banner from "../common/Banner";
 import PaymentTable from "../common/PaymentTable";
 import FAQAccordion from "../common/FAQAccordion";
+import MarketViewFeatureSection from "../common/MarketViewFeatureSection";
 import GetInTouch from "../common/GetInTouch";
 
 const DepositsWithdrawals = () => {
+  const otherNotesData = {
+    title: "Other Important Notes",
+
+    features: [
+      {
+        icon: "script",
+        heading: "You must confirm your account:",
+        paragraph:
+          "You must confirm your account. You can't add or withdraw money until your KYC is fully verified.",
+      },
+      {
+        icon: "chart",
+        heading: "Currency Conversion",
+        paragraph:
+          "Conversions are made using current FX rates, which are clearly shown during your transaction.",
+      },
+      {
+        icon: "bell",
+        heading: "Inactivity Fee",
+        paragraph:
+          "Accounts inactive for 180 days may incur a small maintenance fee to remain active.",
+      },
+      {
+        icon: "calendar",
+        heading: "Deposit/Withdrawal Method Match",
+        paragraph:
+          "Withdrawals must use the same method as the original deposit for security and compliance.",
+      },
+      {
+        icon: "layout",
+        heading: "Card Refund Delays",
+        paragraph:
+          "Refunds to cards may take longer due to bank processing — unfortunately, this is out of our control.",
+      },
+    ],
+  };
+
   const buttons = [
     { label: "Contact Us", link: "/contact", type: "primary" },
     { label: "Live-Chat", link: "/chat", type: "secondary" },
@@ -114,6 +152,14 @@ const DepositsWithdrawals = () => {
       <PaymentTable
         tabs={{ Deposits, Withdrawals }}
         note="¹Innovix Capital does not charge on deposits, however there might be charges from the banks that are then deducted from the amount that you will receive."
+      />
+
+      <MarketViewFeatureSection
+        title={otherNotesData.title}
+        description={otherNotesData.description}
+        features={otherNotesData.features}
+        bgcolor="bg-[#121733]"
+        titlecolor="text-white"
       />
 
       <FAQAccordion
