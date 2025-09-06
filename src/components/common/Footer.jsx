@@ -17,7 +17,12 @@ const Footer = () => {
 
         {
           label: "Deposits and Withdrawals",
-          path: "/deposits-and-withdrawals",
+          path: "/deposits-withdrawals",
+        },
+
+        {
+          label: "Trading Commissions and Fees",
+          path: "/trading-commissions",
         },
       ],
     },
@@ -41,39 +46,23 @@ const Footer = () => {
           label: "Advantage Stocks Account",
           path: "/advantage-stocks-account",
         },
-        {
-          label: "Advantage Plus Account",
-          path: "/advantage-plus-account",
-        },
         { label: "Demo Accounts", path: "/demo-accounts" },
-        { label: "Platforms Overview", path: "/platforms-overview" },
+
+        { label: "Trading Accounts", path: "/trading-accounts" },
+
         { label: "MT4", path: "/mt4" },
-        { label: "Mobile Trading", path: "/mobile-trading" },
-        { label: "Leverage and Margin", path: "/leverage-and-margin" },
-        { label: "Dividends", path: "/dividends" },
       ],
     },
 
     {
       title: "MARKETS",
       links: [
-        { label: "Markets Overview", path: "/markets-overview" },
-        {
-          label: "Contract Specifications",
-          path: "/contract-specifications",
-        },
         { label: "Forex", path: "/forex" },
-        {
-          label: "Major Currency pairs",
-          path: "/major-currency-pairs",
-        },
-        { label: "Spot Metals", path: "/spot-metals" },
-        { label: "CFD Commodities", path: "/cfd-commodities" },
-        { label: "Stocks Trading", path: "/stocks-trading" },
-        { label: "Stocks CFDs", path: "/stocks-cfds" },
-        { label: "CFD on Indices", path: "/cfd-on-indices" },
-        { label: "Crypto CFDs", path: "/crypto-cfds" },
-        { label: "Futures", path: "/futures" },
+        { label: "Metals", path: "/metals" },
+        { label: "Commodities", path: "/commodities" },
+        { label: "Stocks", path: "/stocks" },
+        { label: "Indices", path: "/indices" },
+        { label: "Cryptos ", path: "/cryptos" },
       ],
     },
   ];
@@ -142,7 +131,7 @@ const Footer = () => {
                 <li className="hover:text-white cursor-pointer transition-colors duration-200">
                   <NavLink to="/contact-us">Contact Us</NavLink>
                 </li>
-                <li>Customer Support:</li>
+
                 <li className="font-medium"></li>
               </ul>
             </div>

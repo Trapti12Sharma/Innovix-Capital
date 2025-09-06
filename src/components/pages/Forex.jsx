@@ -43,7 +43,7 @@ const Forex = () => {
   const currencySectionData = {
     title: "Open Your Account Now",
     paragraphs: [
-      "It's easy and fast to start trading FX online with RightTrade Capital. You may start trading with just a few dollars or go all the way up to thousands. It's up to you.",
+      "It's easy and fast to start trading FX online with Innovix Capital. You may start trading with just a few dollars or go all the way up to thousands. It's up to you.",
       "The world's biggest financial market, with a daily trading volume of over $5 trillion, lets you trade major, minor, and exotic currency pairings.",
       "FX online are split into three categories. Forex are the most traded pairs in the forex industry. They usually include the US dollar as one half of the pair, like the EUR/USD and the USD/JPY. Other commonly traded major pairs include EUR/JPY and the EUR/GBP.",
     ],

@@ -102,7 +102,7 @@ const Cryptos = () => {
       <Banner title="Cryptos" bgImage="/depositw1.jpg" />
 
       <MarketViewSteps
-        title="The Best Cryptocurrency Trading Platform – Why RightTrade Capital Leads"
+        title="The Best Cryptocurrency Trading Platform – Why Innovix Capital Leads"
         steps={stepsData}
       />
 

@@ -11,10 +11,10 @@ const TradingCommissions = () => {
     title:
       "The Different Kinds of Trading Accounts We Have and How Much They Cost",
     subtitle:
-      "RightTrade Capital features a variety of accounts to meet the needs of various traders. Every account is set up to provide you the perfect balance of spreads, commissions, and ways to trade.",
+      "Innovix Capital features a variety of accounts to meet the needs of various traders. Every account is set up to provide you the perfect balance of spreads, commissions, and ways to trade.",
     ctaText: "Compare All Accounts",
     ctaNote:
-      "Log in to your RightTrade Capital account to see which account fits your trading style.",
+      "Log in to your Innovix Capital account to see which account fits your trading style.",
     regions: [
       {
         title: "List the pros",
@@ -79,7 +79,7 @@ const TradingCommissions = () => {
         icon: "script",
         heading: "Costs for Deposits",
         paragraph:
-          "You don't have to pay anything to make deposits to RightTrade Capital. Your payment processor could charge you to change currencies.",
+          "You don't have to pay anything to make deposits to Innovix Capital. Your payment processor could charge you to change currencies.",
       },
     ],
   };

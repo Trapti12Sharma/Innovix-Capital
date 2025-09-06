@@ -121,7 +121,7 @@ const Metals = () => {
         title="Things That Have an Impact on Precious Metals Trading"
         paragraphTextColor="text-white"
         paragraphs={[
-          "We give traders everything they need to trade swiftly and correctly on the global currency markets at RightTrade Capital.One of the most fundamental things to know about trading forex is how the major currency pairings function.",
+          "We give traders everything they need to trade swiftly and correctly on the global currency markets at Innovix Capital.One of the most fundamental things to know about trading forex is how the major currency pairings function.",
         ]}
         listItems={[
           "Rates of Interest : Gold and silver are more appealing when interest rates are low because they don't pay interest.",
@@ -134,7 +134,7 @@ const Metals = () => {
       <CurrencyInfoSection {...currencySectionData} />
 
       <MarketViewSteps
-        title="The Best Cryptocurrency Trading Platform – Why RightTrade Capital Leads"
+        title="The Best Cryptocurrency Trading Platform – Why Innovix Capital Leads"
         steps={stepsData}
       />
 

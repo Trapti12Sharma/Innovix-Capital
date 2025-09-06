@@ -169,7 +169,7 @@ const AccountsOverview = () => {
           "With Commission-Free Forex Trading choices, you may trade with confidence.",
           "Match the features to the trading platform you like best: MetaTrader 4 or MetaTrader 5.",
         ]}
-        description="At RightTrade Capital, you may choose an account that fits your trading ambitions."
+        description="At Innovix Capital, you may choose an account that fits your trading ambitions."
       />
 
       <AccountSection

@@ -158,7 +158,7 @@ const AdvantageStocksAccount = () => {
 
       <SideImageTextSection
         image="/stockinnovix.png"
-        title="RightTrade Capital: A Trading Account for Advantage Stocks"
+        title="Innovix Capital: A Trading Account for Advantage Stocks"
         paragraphTextColor="text-white"
         bgColor="bg-[#121733]"
         textcolor="text-white"

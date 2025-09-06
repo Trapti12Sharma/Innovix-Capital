@@ -100,30 +100,36 @@ const Navbar = () => {
   return (
     <nav className="w-full font-sans z-50">
       {/* Top black bar */}
-      <div className="bg-[#0B2A4D] text-white flex justify-between px-4 md:px-8 py-2 text-sm">
-        <div className="flex gap-4 md:gap-6">
-          <span>⚝ Partnership</span>
-          <span>📞 Help Center</span>
+      <div className="bg-[#0B2A4D] text-white flex flex-col sm:flex-row justify-between items-center px-4 sm:px-6 lg:px-8 py-2 text-xs sm:text-sm">
+        <div className="flex flex-wrap gap-3 sm:gap-6">
+          <span className="cursor-pointer hover:opacity-80">⚝ Partnership</span>
+          <span className="cursor-pointer hover:opacity-80">
+            📞 Help Center
+          </span>
         </div>
-        <div className="flex gap-4 md:gap-6">
-          <span>💬 Live chat</span>
-          <span>🇬🇧 English ▾</span>
+        <div className="flex flex-wrap gap-3 sm:gap-6 mt-2 sm:mt-0">
+          <span className="cursor-pointer hover:opacity-80">💬 Live chat</span>
+          <span className="cursor-pointer hover:opacity-80">🇬🇧 English ▾</span>
         </div>
       </div>
 
       {/* Navbar */}
       <div
-        className={`text-white px-4 md:px-8 py-3 flex items-center justify-between relative transition-colors duration-300 ${
+        className={`text-white px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between relative transition-colors duration-300 ${
           openMenu || mobileOpen ? "bg-[#2A8A9D]" : "bg-[#0d223d]"
         }`}
       >
-        {/* ✅ Logo replace */}
+        {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <img src="/innovix.jpeg" alt="Logo" className="h-10 w-auto" />
+          <img
+            src="/innovixlogo.png"
+            alt="Logo"
+            className="h-17 sm:h-19 w-auto max-w-[200px]"
+          />
         </Link>
 
         {/* Desktop Nav Links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium relative">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-8 text-sm font-medium relative">
           {[
             { label: "About Us", key: "about" },
             { label: "Trading", key: "trading" },
@@ -143,7 +149,6 @@ const Navbar = () => {
                 >
                   <ChevronDown size={16} />
                 </motion.div>
-
                 {openMenu === item.key && (
                   <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white"></span>
                 )}
@@ -153,11 +158,11 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Right buttons */}
-        <div className="hidden md:flex items-center gap-4">
-          <button className="border border-white px-4 py-2 rounded hover:bg-white hover:text-[#2A8A9D] transition">
+        <div className="hidden lg:flex items-center gap-3 xl:gap-4">
+          <button className="border border-white px-3 py-1.5 text-sm rounded hover:bg-white hover:text-[#2A8A9D] transition">
             Login
           </button>
-          <button className="bg-[#2A8A9D] text-white px-4 py-2 rounded hover:opacity-80 transition">
+          <button className="bg-[#2A8A9D] text-white px-3 py-1.5 text-sm rounded hover:opacity-80 transition">
             Open An Account
           </button>
         </div>
@@ -165,14 +170,13 @@ const Navbar = () => {
         {/* Mobile Hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-white"
+          className="lg:hidden text-white"
         >
-          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Desktop Dropdowns */}
-
       <AnimatePresence>
         {openMenu && !mobileOpen && (
           <motion.div
@@ -181,9 +185,9 @@ const Navbar = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="w-full bg-[#2A8A9D] text-white shadow-lg overflow-hidden md:block relative"
+            className="w-full bg-[#2A8A9D] text-white shadow-lg overflow-hidden lg:block hidden"
           >
-            <div className="max-w-6xl mx-auto p-8 grid grid-cols-3 gap-10">
+            <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {menus[openMenu].map((menu, i) => (
                 <Link
                   to={menu.path}
@@ -191,8 +195,8 @@ const Navbar = () => {
                   className="block hover:opacity-80"
                   onClick={() => setOpenMenu(null)}
                 >
-                  <p className="font-bold">{menu.title}</p>
-                  <p className="text-sm">{menu.desc}</p>
+                  <p className="font-bold text-sm sm:text-base">{menu.title}</p>
+                  <p className="text-xs sm:text-sm">{menu.desc}</p>
                 </Link>
               ))}
             </div>
@@ -205,68 +209,70 @@ const Navbar = () => {
         {mobileOpen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "100vh", opacity: 1 }}
+            animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="w-full bg-[#2A8A9D] text-white shadow-lg overflow-hidden md:block relative"
+            className="w-full bg-[#2A8A9D] text-white shadow-lg overflow-auto lg:hidden"
           >
-            {[
-              { label: "About Us", key: "about" },
-              { label: "Trading", key: "trading" },
-              { label: "Tools", key: "tools" },
-              { label: "Markets", key: "markets" },
-              { label: "Contact Us", key: "contact" },
-            ].map((item) => (
-              <div key={item.key}>
-                <button
-                  onClick={() => toggleMenu(item.key)}
-                  className="flex items-center justify-between w-full py-2 border-b border-white/30"
-                >
-                  {item.label}
-                  <motion.div
-                    animate={{ rotate: openMenu === item.key ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
+            <div className="px-4 py-4">
+              {[
+                { label: "About Us", key: "about" },
+                { label: "Trading", key: "trading" },
+                { label: "Tools", key: "tools" },
+                { label: "Markets", key: "markets" },
+                { label: "Contact Us", key: "contact" },
+              ].map((item) => (
+                <div key={item.key}>
+                  <button
+                    onClick={() => toggleMenu(item.key)}
+                    className="flex items-center justify-between w-full py-3 text-sm sm:text-base border-b border-white/30"
                   >
-                    <ChevronDown size={18} />
-                  </motion.div>
-                </button>
-
-                {/* Collapsible submenus */}
-                <AnimatePresence>
-                  {openMenu === item.key && (
+                    {item.label}
                     <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
+                      animate={{ rotate: openMenu === item.key ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
-                      className="pl-4 flex flex-col gap-2 py-2"
                     >
-                      {menus[item.key].map((menu, i) => (
-                        <Link
-                          to={menu.path}
-                          key={i}
-                          className="text-sm hover:opacity-80 block"
-                          onClick={() => {
-                            setMobileOpen(false);
-                            setOpenMenu(null);
-                          }}
-                        >
-                          {menu.title}
-                        </Link>
-                      ))}
+                      <ChevronDown size={18} />
                     </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
+                  </button>
 
-            <div className="mt-6">
-              <button className="w-full border border-white px-4 py-2 rounded mb-3">
-                Login
-              </button>
-              <button className="w-full bg-[#2A8A9D] px-4 py-2 rounded">
-                Open An Account
-              </button>
+                  {/* Collapsible submenus */}
+                  <AnimatePresence>
+                    {openMenu === item.key && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="pl-4 flex flex-col gap-2 py-2"
+                      >
+                        {menus[item.key].map((menu, i) => (
+                          <Link
+                            to={menu.path}
+                            key={i}
+                            className="text-xs sm:text-sm hover:opacity-80 block"
+                            onClick={() => {
+                              setMobileOpen(false);
+                              setOpenMenu(null);
+                            }}
+                          >
+                            {menu.title}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+
+              <div className="mt-6 flex flex-col gap-3">
+                <button className="w-full border border-white px-4 py-2 text-sm rounded hover:bg-white hover:text-[#2A8A9D] transition">
+                  Login
+                </button>
+                <button className="w-full bg-white text-[#2A8A9D] px-4 py-2 text-sm rounded hover:opacity-80 transition">
+                  Open An Account
+                </button>
+              </div>
             </div>
           </motion.div>
         )}
