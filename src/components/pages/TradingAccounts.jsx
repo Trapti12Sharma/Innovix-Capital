@@ -7,6 +7,7 @@ import TradingAccountComparison from "../common/TradingAccountComparison";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
 import MarketViewFeaturen from "../common/MarketViewFeaturen";
+
 import { FaChartLine, FaLayerGroup, FaSignal } from "react-icons/fa";
 
 const TradingAccounts = () => {
@@ -154,6 +155,7 @@ const TradingAccounts = () => {
   return (
     <>
       <Banner title="Trading Account" bgImage="/about1.jpg" />
+
       <AccountSection
         sectionTitle="An Account To Suit Your Needs"
         cards={[

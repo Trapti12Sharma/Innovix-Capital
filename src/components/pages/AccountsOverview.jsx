@@ -7,6 +7,7 @@ import TradingAccountComparison from "../common/TradingAccountComparison";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
 import MarketViewFeaturen from "../common/MarketViewFeaturen";
+import SideImageTextSection from "../common/SideImageTextSection";
 import { FaChartLine, FaLayerGroup, FaSignal } from "react-icons/fa";
 
 const AccountsOverview = () => {
@@ -154,6 +155,22 @@ const AccountsOverview = () => {
   return (
     <>
       <Banner title="Account Overview" bgImage="/about1.jpg" />
+
+      <SideImageTextSection
+        image="/accountinnvix.png"
+        bgColor="bg-[#2a2d45]"
+        textcolor="text-[#ffffff]"
+        title="Why it's important to choose the right account"
+        paragraphs={[
+          "Choosing the best Forex trading account isn't just about the statistics; it's also about making sure the account works for you.The appropriate account can benefit you:",
+        ]}
+        listItems={[
+          "The Lowest Spread Trading Account lets you trade for less money.",
+          "With Commission-Free Forex Trading choices, you may trade with confidence.",
+          "Match the features to the trading platform you like best: MetaTrader 4 or MetaTrader 5.",
+        ]}
+        description="At RightTrade Capital, you may choose an account that fits your trading ambitions."
+      />
 
       <AccountSection
         sectionTitle="An Account To Suit Your Needs"

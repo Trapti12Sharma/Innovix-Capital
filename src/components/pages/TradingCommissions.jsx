@@ -138,7 +138,7 @@ const TradingCommissions = () => {
   return (
     <>
       <Banner
-        title="About Us"
+        title="Trading Commissions and Fees"
         subtitle="Trading conditions at a glance:"
         description="Fast execution, tight spreads and a choice of account types for every trading style."
         bgImage="/about1.jpg"

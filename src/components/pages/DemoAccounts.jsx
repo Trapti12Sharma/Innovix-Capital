@@ -7,6 +7,7 @@ import TradingAccountComparison from "../common/TradingAccountComparison";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
 import MarketViewFeaturen from "../common/MarketViewFeaturen";
+import ImageTextSections from "../common/ImageTextSections";
 import { FaChartLine, FaLayerGroup, FaSignal } from "react-icons/fa";
 
 const DemoAccounts = () => {
@@ -154,6 +155,22 @@ const DemoAccounts = () => {
   return (
     <>
       <Banner title="Demo Account" bgImage="/about1.jpg" />
+
+      <ImageTextSections
+        title="Why Choose a Demo Account?"
+        description={`Try out the markets without putting your money at risk. With our free forex demo account, you may use the MT4 and MT5 platforms to practice, look at real-time market data, and try out your trading strategies with fake money.
+
+
+        • Learn how to read charts
+        • Recognize candlestick patterns
+        • Use technical indicators to your advantage`}
+        image="/depositsinnovix.png"
+        reverse={false}
+        noButton={true}
+        bgcolor="bg-white"
+        textcolor="text-[#121733]"
+        paragraph="Take your time and develop your confidence before you start trading for real. The demo account is ideal for both novice and experienced traders since it lets you practice trading without risking your own money."
+      />
 
       <AccountSection
         sectionTitle="An Account To Suit Your Needs"

@@ -7,8 +7,69 @@ import { PenTool, Wallet, BarChart } from "lucide-react";
 import ToolsSection from "../common/ToolsSection";
 import PlatformTabs from "../common/PlatformTabs";
 import AccountFeatures from "../common/AccountFeatures";
+import MarketTable from "../common/MarketTable";
 
 function Home() {
+  const categories = ["Forex", "Stocks", "Indices", "Cryptos", "Commodities"];
+
+  const data = {
+    Forex: [
+      {
+        name: "EUR/USD",
+        buy: "1.17569",
+        sell: "1.17568",
+        change: "+0.7%",
+        icon: "/images/eurusd.png",
+        chart: "/images/green-chart.png",
+      },
+      {
+        name: "EUR/JPY",
+        buy: "172.831",
+        sell: "172.822",
+        change: "-0.18%",
+        icon: "/images/eurjpy.png",
+        chart: "/images/red-chart.png",
+      },
+
+      {
+        name: "EUR/USD",
+        buy: "1.17569",
+        sell: "1.17568",
+        change: "+0.7%",
+        icon: "/images/eurusd.png",
+        chart: "/images/green-chart.png",
+      },
+      {
+        name: "EUR/JPY",
+        buy: "172.831",
+        sell: "172.822",
+        change: "-0.18%",
+        icon: "/images/eurjpy.png",
+        chart: "/images/red-chart.png",
+      },
+      {
+        name: "EUR/USD",
+        buy: "1.17569",
+        sell: "1.17568",
+        change: "+0.7%",
+        icon: "/images/eurusd.png",
+        chart: "/images/green-chart.png",
+      },
+      {
+        name: "EUR/JPY",
+        buy: "172.831",
+        sell: "172.822",
+        change: "-0.18%",
+        icon: "/images/eurjpy.png",
+        chart: "/images/red-chart.png",
+      },
+    ],
+    Stocks: [],
+    Indices: [],
+    Cryptos: [],
+    Commodities: [],
+  };
+
   const featuresData = [
     { label: "Min. deposit", value: "$20" },
     { label: "Max Leverage", value: "1:500" },
@@ -113,6 +174,20 @@ function Home() {
           title="Access Global Markets with"
           highlight="Superior Trading Conditions"
           features={features}
+        />
+
+        <MarketTable
+          heading="Trade the Most Popular Assets"
+          subheading="We take great pride in combining some of the best trading conditions in the industry with rapid market execution."
+          features={[
+            "Various order types",
+            "Super-tight spreads",
+            "Hedging allowed",
+            "Maximum fund security",
+            "Many payment methods",
+          ]}
+          categories={categories}
+          data={data}
         />
 
         <StepsSection

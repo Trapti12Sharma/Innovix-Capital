@@ -7,6 +7,7 @@ import TradingAccountComparison from "../common/TradingAccountComparison";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
 import MarketViewFeaturen from "../common/MarketViewFeaturen";
+import ImageTextSections from "../common/ImageTextSections";
 import { FaChartLine, FaLayerGroup, FaSignal } from "react-icons/fa";
 
 const AdvantageAccount = () => {
@@ -155,6 +156,20 @@ const AdvantageAccount = () => {
     <>
       <Banner title="Advantage Account" bgImage="/about1.jpg" />
 
+      <ImageTextSections
+        title="Who Is Able to Utilize the Advantage Account?"
+        description={`The Advantage Account is ideal for:
+
+        • Scalpers who need to execute exact and inexpensive deals.
+        • Day traders who need to get to the market quickly and have their orders filled.
+        • Swing traders who like spreads that are good for business.
+         • Professional traders who want the finest forex trading leverage and more complex strategies to handle risk.`}
+        image="/advantageinnovix.png"
+        reverse={false}
+        noButton={true} // hides the button
+        bgcolor="bg-white"
+        textcolor="text-black"
+      />
       <AccountSection
         sectionTitle="An Account To Suit Your Needs"
         cards={[

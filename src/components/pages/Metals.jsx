@@ -5,6 +5,7 @@ import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
 import CurrencyInfoSection from "../common/CurrencyInfoSection";
 import MarketViewSteps from "../common/MarketViewSteps";
+import SideImageTextSection from "../common/SideImageTextSection";
 
 const Metals = () => {
   const stepsData = [
@@ -112,6 +113,23 @@ const Metals = () => {
   return (
     <>
       <Banner title="Metals" bgImage="/depositw1.jpg" />
+
+      <SideImageTextSection
+        image="/metalsinnovix.png"
+        bgColor="bg-[#121733]"
+        textcolor="text-white"
+        title="Things That Have an Impact on Precious Metals Trading"
+        paragraphTextColor="text-white"
+        paragraphs={[
+          "We give traders everything they need to trade swiftly and correctly on the global currency markets at RightTrade Capital.One of the most fundamental things to know about trading forex is how the major currency pairings function.",
+        ]}
+        listItems={[
+          "Rates of Interest : Gold and silver are more appealing when interest rates are low because they don't pay interest.",
+          "Inflation : Traders often look for safe-haven assets like gold when inflation rises.",
+          "Geopolitical Risk : Wars, conflicts, and instability can cause the prices of metals to rise.",
+          "Industry Demand : Especially for silver, which is used in electronics, solar panels, and medical technology.",
+        ]}
+      />
 
       <CurrencyInfoSection {...currencySectionData} />
 

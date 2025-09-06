@@ -7,6 +7,7 @@ import TradingAccountComparison from "../common/TradingAccountComparison";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
 import MarketViewFeaturen from "../common/MarketViewFeaturen";
+import SideImageTextSection from "../common/SideImageTextSection";
 import { FaChartLine, FaLayerGroup, FaSignal } from "react-icons/fa";
 
 const AdvantageStocksAccount = () => {
@@ -154,6 +155,19 @@ const AdvantageStocksAccount = () => {
   return (
     <>
       <Banner title="Advantage Stock Account" bgImage="/about1.jpg" />
+
+      <SideImageTextSection
+        image="/stockinnovix.png"
+        title="RightTrade Capital: A Trading Account for Advantage Stocks"
+        paragraphTextColor="text-white"
+        bgColor="bg-[#121733]"
+        textcolor="text-white"
+        paragraphs={[
+          "With Zero Commission, you can trade stocks like Tesla, Apple, Microsoft, and more. It's a smarter way to buy and sell stocks.",
+        ]}
+        paragraphs2="At RightTradeCapital, we believe that every trader should have an advantage over the others. People who want to trade the most popular stocks in the world, like Tesla, Apple, and Microsoft, without having to pay high commissions can use the Advantage Stocks Trading Account.
+        You can now take charge of your portfolio like never before with Zero Commission Stock Trading, which has tight spreads, cutting-edge technology, and full transparency."
+      />
 
       <AccountSection
         sectionTitle="An Account To Suit Your Needs"

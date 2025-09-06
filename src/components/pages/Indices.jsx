@@ -4,8 +4,41 @@ import PaymentTable from "../common/PaymentTable";
 import FAQAccordion from "../common/FAQAccordion";
 import GetInTouch from "../common/GetInTouch";
 import CurrencyInfoSection from "../common/CurrencyInfoSection";
+import SideImageTextSection from "../common/SideImageTextSection";
+import MarketViewSteps from "../common/MarketViewSteps";
 
 const Indices = () => {
+  const stepsData = [
+    {
+      image:
+        "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
+      heading: "One Trade to Lower Risk",
+      description:
+        "An index is a list of the best companies in a certain field or country. This built-in variety makes it less likely that you'll only own one stock.",
+    },
+    {
+      image:
+        "https://images.pexels.com/photos/6802046/pexels-photo-6802046.jpeg",
+      heading: "Leverage Can Help You Find More Opportunities",
+      description:
+        "You can open bigger positions with CFD index trading than you could with just your initial capital. Leverage can help you make more money, but it can also increase your losses. You have to be very careful with it.",
+    },
+    {
+      image:
+        "https://images.pexels.com/photos/6802047/pexels-photo-6802047.jpeg",
+      heading: "Go Long or Short",
+      description:
+        "The markets can change your positions. You can change your strategy to fit the market when you trade CFD indexes. This means you can make money no matter what the market is doing.",
+    },
+    {
+      image:
+        "https://images.pexels.com/photos/6802047/pexels-photo-6802047.jpeg",
+      heading: "Get Into the World Market",
+      description:
+        "You can trade indexes from major economies like the U.S., the U.K., Europe, Asia, and Australia. You can reach a lot of different markets from one platform.",
+    },
+  ];
+
   const currencySectionData = {
     title:
       "How to Choose the Best Trading platform in India Without Getting Confused",
@@ -119,6 +152,25 @@ const Indices = () => {
   return (
     <>
       <Banner title="Indices" bgImage="/depositw1.jpg" />
+
+      <SideImageTextSection
+        image="/indicesinnovix.png"
+        bgColor="bg-white"
+        textcolor="text-black"
+        title="Common Indexes for Trading"
+        paragraphTextColor="text-black"
+        paragraphs={[
+          "You can trade CFDs on some of the most important indexes, like:",
+        ]}
+        listItems={[
+          "Nasdaq 100 (US Tech 100) – Tracks the stock prices of 100 of the biggest tech companies in the US.",
+          "S&P 500 – A list of the 500 best U.S. companies and how well they are doing.",
+          "Dow Jones Industrial Average (DJIA) – 30 major U.S. companies across different industries.",
+          "FTSE 100 (UK 100) – Lists the 100 largest companies on the London Stock Exchange.",
+        ]}
+      />
+
+      <MarketViewSteps title="Why Should You Trade CFDs?" steps={stepsData} />
 
       <CurrencyInfoSection {...currencySectionData} />
 
