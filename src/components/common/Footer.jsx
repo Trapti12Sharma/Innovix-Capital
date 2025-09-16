@@ -76,7 +76,7 @@ const Footer = () => {
           <h2 className="text-lg font-medium">Join our community</h2>
           <div className="flex gap-4 text-xl">
             <a
-              href="https://x.com/righttradecap"
+              href="https://x.com/innovixcapital"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -84,7 +84,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="https://www.instagram.com/righttradecapital/"
+              href="https://www.instagram.com/innovixcapital/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -92,7 +92,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="https://www.facebook.com/profile.php?id=61577896359870"
+              href="https://www.facebook.com/innovixcapital"
               target="_blank"
               rel="noopener noreferrer"
             >
